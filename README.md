@@ -1,83 +1,70 @@
-____________________________________________________________________________________
+# Human Movement Analysis System - AI
+This project is developed for the algorithms and programming III (09481) course at Universidad Icesi in Cali, Colombia.
 
-
-# Project Template
-This is the template for the Project I course at the IA Master, Universidad Icesi, Cali Colombia
-
-This template is based on the template proposed by the [Data Science Working Group] (https://github.com/sfbrigade/data-science-wg) Code for the [San Francisco’s Code initiative](https://github.com/sfbrigade/data-science-wg) 
-
-*Instructions: Edit this template filling in the titles, information, and links! Feel free to stray a bit to suit your project but try to provide the main information for reviews and feedback purposes.*
-## Remove this table after updating your project's information
-____________________________________________________________________________________
-
-# Project Name
-This project is a part of the  **Proyecto 1 de Innovación Tecnológica** course in the Applied Artificial Intelligence Master, Universidad Icesi, Cali Colombia. 
-
-#### -- Project Status: [Active, On-Hold, Completed]
+#### -- Project Status: [Active]
 
 ## Contributing Members
 
-**Team Leader: [Full Name](https://github.com/[github handle])(@slackHandle)**
-**Instructor: [Full Name](https://github.com/[github handle])(@slackHandle)**
-
-#### Other Members:
-
-|Name     |  Email   | 
+|Name     |  GitHub Handle   | 
 |---------|-----------------|
-|[Full Name](https://github.com/[github handle])| @johnDoe        |
-|[Full Name](https://github.com/[github handle]) |     @janeDoe    |
+|[Geoffrey Pasaje](https://github.com/[Geoffrey0pv]) |     @Geoffrey0pv    |
+|[Mateo Rubio](https://github.com/[MateoRAR])| @MateoRAR        |
+|[Raul Quigua](https://github.com/[RaulQode]) |     @RaulQode    |
 
 ## Contact
-* Feel free to contact the team leader or the instructor with any questions or if you are interested in contributing!
-
+* Feel free to contact any team member with questions or if you are interested in contributing!
 
 ## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
+
+The purpose of this project is to develop and evaluate a machine learning system capable of classifying specific human activities from a real-time video stream. The system will analyze movements such as walking, turning, sitting, and standing by tracking key body joints. This work aims to apply the theoretical concepts of supervised learning to a practical computer vision problem, following a structured methodology from data collection to model evaluation.
 
 ### Partner
-This section should be added when there's a partner institution 
-* [Name of Partner organization/Government department etc..]
-* Website for partner
-* Partner contact: [Name of Contact], [slack handle of contact if any]
-* If you do not have a partner leave this section out
+
+* Universidad ICESI
+* https://www.icesi.edu.co
+* Partner contact: Milton Sarria
 
 ### Methods Used
-* Inferential Statistics
+* Supervised Learning
 * Machine Learning
-* Data Visualization
-* Predictive Modeling
-* etc.
+* Classification Models
+* Feature Engineering
+* Exploratory Data Analysis (EDA)
+* Data Visualization.
 
 ### Technologies
-* R 
 * Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
-* etc. 
+* OpenCV
+* MediaPipe
+* Scikit-learn
+* Pandas & NumPy
+* Jupyter Notebooks / Google Colab
 
 ## Project Description
-(Provide a more detailed overview of the project.  Talk a bit about your data sources and what questions and hypotheses you are exploring. What specific data analysis/visualization and modeling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
+This project addresses a supervised classification problem focused on identifying human actions from video data. Our main hypothesis is that we can accurately classify activities by using the spatial coordinates of body joints as features for machine learning models.
+
+The project will follow the CRISP-DM methodology, beginning with data collection (recording videos of team members performing the specified actions) and proceeding through data preparation. During the preparation phase, we will use MediaPipe to extract skeletal landmarks and Pandas for data cleaning and transformation. Subsequently, we will train and compare various classification models available in Scikit-learn, such as Support Vector Machines (SVM) and Random Forests, to determine the most effective approach.
 
 ## Getting Started
-Instructions for contributors
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
 
-    *If using offline data mention that and how contributors may obtain the data )*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
+Follow these instructions to set up the project environment.
 
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
+1.  **Clone this repo**. For help, see this [tutorial](https://help.github.com/articles/cloning-a-repository/).
+2.  **Install the required dependencies**. Ensure you have Python installed, then run the following command in your terminal:
+    ```bash
+    pip install opencv-python mediapipe scikit-learn pandas jupyter
+    ```
+3.  **Raw data** (videos) used for training and testing will be kept in the `/data/raw` folder.
+4.  **Data processing scripts and notebooks** are located in the `/notebooks` and `/src` directories.
 
-5. Follow setup [instructions](Link to file)
 
 ## Featured Notebooks/Analysis/Deliverables
 * [Notebook/Markdown/Slide Deck Title](link)
 * [Notebook/Markdown/Slide DeckTitle](link)
 * [Blog Post](link)
+
+
+
+
 
 
