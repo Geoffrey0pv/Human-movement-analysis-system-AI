@@ -86,13 +86,25 @@ Since collecting large volumes of video is a slow process, the following strateg
 3.  **Search for Public Datasets:** Investigate the existence of publicly available databases containing videos of people performing similar actions that could be adapted for our problem.
 
 ---
+
 ## 7. Ethical Analysis
 
-The implementation of this AI solution requires consideration of the following ethical aspects:
+The implementation of this AI solution requires a careful evaluation of multiple ethical dimensions to ensure fairness, transparency, and social responsibility.
 
-* **Privacy and Consent:** Informed consent must be obtained from all individuals being recorded. It must be guaranteed that the videos will be used exclusively for academic and research purposes and stored securely.
-* **Data Bias:** If the dataset is collected solely from individuals with similar demographic characteristics (age, gender, body type), the model may not generalize well to other groups. It is important to seek diversity among participants.
-* **Misuse of Technology:** Person-tracking technology could be used for surveillance purposes without consent. It is crucial to be aware of these implications and to define the project's scope strictly to movement analysis for sports, health, or human-computer interaction purposes.
+* **Privacy and Consent:**  
+  Informed consent must be obtained from all individuals whose data are recorded or processed. It is essential to guarantee that videos and other collected data are used exclusively for academic and research purposes, handled under strict confidentiality, and stored in secure environments with restricted access. Personal identifiers should be anonymized whenever possible to reduce privacy risks.
+
+* **Algorithmic Bias:**  
+  The dataset used for model training must represent a diverse range of demographic groups (e.g., age, gender, ethnicity, body type) to prevent algorithmic bias. A lack of diversity could result in a model that performs unevenly across populations, reinforcing social inequalities. Regular audits and fairness evaluations should be conducted to identify and mitigate these biases.
+
+* **Responsible Use of Data:**  
+  Data should be collected and processed following ethical and legal standards, such as data minimization and purpose limitation. Researchers and developers must ensure that data are not repurposed for activities outside the project’s scope. Clear governance policies should define who can access, use, or modify the data and under what circumstances.
+
+* **Misuse of Technology:**  
+  Person-tracking and behavior-recognition technologies can be misused for surveillance or discriminatory practices if deployed without proper ethical safeguards. It is crucial to set clear boundaries for the technology’s use, limiting its application strictly to domains such as sports performance, healthcare, or human-computer interaction.
+
+* **Social Impact:**  
+  The deployment of this model can have significant social implications, including the potential to reshape how movement data are used in professional and everyday contexts. Developers must assess the broader consequences of the system’s adoption, ensuring it benefits individuals and communities without reinforcing inequities or enabling unethical monitoring practices.
 
 ---
 
