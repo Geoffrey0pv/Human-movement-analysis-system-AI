@@ -106,7 +106,7 @@ if __name__ == "__main__":
     
     # Usar ruta absoluta o relativa desde la raíz del proyecto
     video_dir = Path(__file__).parent / "videos"
-    output_csv = Path(__file__).parent.parent.parent.parent / "Submission 1" / "data" / "movement_data.csv"
+    output_csv = Path(__file__).parent.parent.parent.parent / "Submission_2" / "data" / "movement_data.csv"
     
     print(f"Buscando videos en: {video_dir.absolute()}")
     
