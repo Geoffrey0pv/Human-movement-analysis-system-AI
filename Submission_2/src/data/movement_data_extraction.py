@@ -1,7 +1,6 @@
 import cv2
 import mediapipe as mp
 import pandas as pd
-import numpy as np
 from pathlib import Path
 
 class MovementDataExtractor:
@@ -14,9 +13,8 @@ class MovementDataExtractor:
         )
     
     def extract_landmarks_from_video(self, video_path):
-        """Extrae landmarks de pose de un video"""
+        """Extrae landmarks de pose de un video."""
         cap = cv2.VideoCapture(str(video_path))
-        
         landmarks_data = []
         frame_count = 0
         
@@ -29,12 +27,9 @@ class MovementDataExtractor:
             results = self.pose.process(rgb_frame)
             
             if results.pose_landmarks:
-                # Extraer coordenadas de cada landmark
-                frame_data = {
-                    'frame': frame_count,
-                    'video': video_path.name
-                }
+                frame_data = {'frame': frame_count, 'video': video_path.name}
                 
+                # Extraer x, y, z, visibility de cada landmark
                 for idx, landmark in enumerate(results.pose_landmarks.landmark):
                     frame_data[f'x_{idx}'] = landmark.x
                     frame_data[f'y_{idx}'] = landmark.y
@@ -49,33 +44,29 @@ class MovementDataExtractor:
         return pd.DataFrame(landmarks_data)
     
     def process_video_directory(self, video_dir, output_csv):
-        """Procesa todos los videos en un directorio"""
+        """Procesa todos los videos en un directorio y genera CSV."""
         video_dir = Path(video_dir)
         
-        # Verificar que el directorio existe
         if not video_dir.exists():
-            raise FileNotFoundError(f"El directorio no existe: {video_dir}")
+            raise FileNotFoundError(f"Directorio no existe: {video_dir}")
         
-        all_data = []
-        
-        # Listar videos disponibles
         video_files = list(video_dir.glob('*.mp4'))
-        print(f"Videos encontrados: {len(video_files)}")
-        print(f"Ruta absoluta: {video_dir.absolute()}")
+        print(f"Videos encontrados: {len(video_files)} en {video_dir.absolute()}")
         
         if not video_files:
-            raise ValueError(f"No se encontraron videos .mp4 en: {video_dir.absolute()}")
+            raise ValueError(f"No hay videos .mp4 en: {video_dir.absolute()}")
+        
+        all_data = []
         
         for video_file in video_files:
             print(f"Procesando: {video_file.name}")
             df = self.extract_landmarks_from_video(video_file)
             
             if df.empty:
-                print(f" No se detectaron landmarks en {video_file.name}")
+                print(f"  ⚠ No se detectaron landmarks")
                 continue
             
-            # Extraer metadata del nombre del archivo
-            # Ejemplo: caminar_adelante_01_lento.mp4
+            # Extraer acción y velocidad del nombre: accion_numero_velocidad.mp4
             parts = video_file.stem.split('_')
             df['action'] = '_'.join(parts[:-2]) if len(parts) > 3 else parts[0]
             df['speed'] = parts[-1] if len(parts) > 1 else 'unknown'
@@ -83,34 +74,28 @@ class MovementDataExtractor:
             all_data.append(df)
             print(f"  ✓ {len(df)} frames procesados")
         
-        # Verificar que hay datos para concatenar
         if not all_data:
             raise ValueError("No se pudo extraer datos de ningún video")
         
-        # Combinar todos los datos
+        # Combinar y guardar
         final_df = pd.concat(all_data, ignore_index=True)
-        
-        # Crear directorio de salida si no existe
         output_path = Path(output_csv)
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        
         final_df.to_csv(output_csv, index=False)
+        
         print(f"\n✓ Datos guardados en: {output_csv}")
-        print(f"  Total de frames: {len(final_df)}")
-        print(f"  Acciones únicas: {final_df['action'].unique()}")
+        print(f"  Total frames: {len(final_df)}")
+        print(f"  Acciones: {final_df['action'].unique()}")
         
         return final_df
 
 if __name__ == "__main__":
     extractor = MovementDataExtractor()
     
-    # Usar ruta absoluta o relativa desde la raíz del proyecto
+    # Rutas relativas al script
     video_dir = Path(__file__).parent / "videos"
-    output_csv = Path(__file__).parent.parent.parent.parent / "Submission_2" / "data" / "movement_data.csv"
+    output_csv = Path(__file__).parent / "movement_data.csv"
     
-    print(f"Buscando videos en: {video_dir.absolute()}")
+    print(f"Buscando videos en: {video_dir.absolute()}\n")
     
-    df = extractor.process_video_directory(
-        video_dir,
-        output_csv
-    )
+    df = extractor.process_video_directory(video_dir, output_csv)
