@@ -1,0 +1,126 @@
+=============================================
+REPORTE DE VALIDACIÓN - CLASIFICADOR V4
+=============================================
+
+Fecha: Fri Nov 21 01:10:22 PM -05 2025
+Videos analizados:
+
+=============================================
+VIDEO: caminar_adelante_01_lento.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 164
+
+Distribución de predicciones:
+  sentarse            :   89 frames ( 54.3%) - Conf. promedio: 38.79%
+  caminar_atras       :   44 frames ( 26.8%) - Conf. promedio: 56.75%
+  pararse             :   31 frames ( 18.9%) - Conf. promedio: 43.06%
+
+============================================================
+
+=============================================
+VIDEO: caminar_adelante_02_rapido.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 214
+
+Distribución de predicciones:
+  sentarse            :  156 frames ( 72.9%) - Conf. promedio: 41.34%
+  pararse             :   40 frames ( 18.7%) - Conf. promedio: 38.03%
+  caminar_atras       :   18 frames (  8.4%) - Conf. promedio: 54.68%
+
+============================================================
+
+=============================================
+VIDEO: caminar_atras_01_lento.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 96
+
+Distribución de predicciones:
+  sentarse            :   68 frames ( 70.8%) - Conf. promedio: 44.99%
+  pararse             :   28 frames ( 29.2%) - Conf. promedio: 48.60%
+
+============================================================
+
+=============================================
+VIDEO: caminar_atras_02_rapido.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 134
+
+Distribución de predicciones:
+  sentarse            :   75 frames ( 56.0%) - Conf. promedio: 54.92%
+  pararse             :   59 frames ( 44.0%) - Conf. promedio: 47.23%
+
+============================================================
+
+=============================================
+VIDEO: girar_rapido_02.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 240
+
+Distribución de predicciones:
+  sentarse            :   98 frames ( 40.8%) - Conf. promedio: 51.81%
+  caminar_atras       :   81 frames ( 33.8%) - Conf. promedio: 45.18%
+  pararse             :   61 frames ( 25.4%) - Conf. promedio: 39.99%
+
+============================================================
+
+=============================================
+VIDEO: giro_lento_01.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 219
+
+Distribución de predicciones:
+  sentarse            :  174 frames ( 79.5%) - Conf. promedio: 48.55%
+  pararse             :   45 frames ( 20.5%) - Conf. promedio: 42.92%
+
+============================================================
+
+=============================================
+VIDEO: pararse_lento_01.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 143
+
+Distribución de predicciones:
+  sentarse            :   79 frames ( 55.2%) - Conf. promedio: 37.20%
+  pararse             :   49 frames ( 34.3%) - Conf. promedio: 33.82%
+  caminar_atras       :   15 frames ( 10.5%) - Conf. promedio: 30.72%
+
+============================================================
+
+=============================================
+VIDEO: sentarse_lento_01.mp4
+=============================================
+ESTADÍSTICAS DEL VIDEO
+============================================================
+
+Total frames procesados: 114
+
+Distribución de predicciones:
+  sentarse            :   94 frames ( 82.5%) - Conf. promedio: 35.10%
+  pararse             :   20 frames ( 17.5%) - Conf. promedio: 32.98%
+
+============================================================
+
+=============================================
+FIN DEL REPORTE
+=============================================

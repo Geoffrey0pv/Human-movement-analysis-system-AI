@@ -1,0 +1,32 @@
+============================================================
+REPORTE DE DIAGNÓSTICO DE DATOS
+============================================================
+
+Dataset: /home/geoffrey0pv/Projects/2025-2/Apo3/Human-movement-analysis-system-AI/Submission_2/src/data/mov_data_proccesed.csv
+
+Dataset: 9467 filas, 51 columnas
+⚠️ DESBALANCE DETECTADO: Ratio 2.80x
+⚠️ Clases estáticas detectadas: caminar_adelante, caminar_atras, girar
+⚠️ PARES CONFUSOS DETECTADOS:
+   - caminar_adelante vs girar: 0.9539
+   - caminar_adelante vs pararse: 0.9895
+   - caminar_adelante vs sentarse: 0.9961
+   - caminar_atras vs girar: 0.9990
+   - caminar_atras vs pararse: 0.9739
+   - girar vs pararse: 0.9804
+   - girar vs sentarse: 0.9504
+   - pararse vs sentarse: 0.9920
+⚠️ Sin información de secuencia temporal
+   Recomendación: Usar ventanas de tiempo (LSTM/secuencias)
+1. BALANCEAR DATOS:
+   - Grabar más videos de clases minoritarias
+   - Data augmentation (flip, velocidad)
+   - SMOTE para balanceo sintético
+3. MEJORAR SEPARABILIDAD:
+   - Agregar features discriminativas
+   - Feature engineering específico
+   - Usar modelos de secuencia (LSTM/GRU)
+4. DIFERENCIAR ESTÁTICO vs DINÁMICO:
+   - Feature: suma de movimiento en ventana
+   - Feature: frames sin cambio > umbral
+   - Post-procesamiento: si velocidad = 0 → pararse/sentarse

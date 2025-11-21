@@ -27,7 +27,8 @@ class MovementClassifier:
     """Clasificador de movimientos humanos usando ML"""
     
     def __init__(self, data_path=None):
-        self.data_path = data_path or Path(__file__).parent.parent / "data" / "mov_data_proccesed.csv"
+        # Usar dataset AUMENTADO con videos de Submission 1 + datos originales
+        self.data_path = data_path or Path(__file__).parent.parent / "data" / "mov_data_proccesed_temporal_features_augmented.csv"
         self.X_train = None
         self.X_test = None
         self.y_train = None  # Etiquetas numéricas
