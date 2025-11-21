@@ -1,10 +1,11 @@
 #!/bin/bash
-# Script de prueba para el clasificador mejorado
+# Script de prueba para el clasificador mejorado V4
 # EJECUTAR DESDE: Submission_2/tests/
 
 echo "=========================================="
-echo "TEST CLASIFICADOR DE MOVIMIENTOS V3"
+echo "TEST CLASIFICADOR DE MOVIMIENTOS V4"
 echo "=========================================="
+echo "✨ 64 Features Temporales (49 + 13)"
 echo ""
 
 # Activar entorno virtual (desde tests/)
@@ -21,13 +22,13 @@ echo ""
 echo "OPCIONES DE USO:"
 echo ""
 echo "1. WEBCAM (tiempo real):"
-echo "   python realtime_classifier_v3.py"
+echo "   python realtime_classifier_v4.py"
 echo ""
 echo "2. VIDEO (archivo):"
-echo "   python realtime_classifier_v3.py --video $VIDEO_DIR/caminar_adelante_01_lento.mp4"
+echo "   python realtime_classifier_v4.py $VIDEO_DIR/sentarse_lento_01.mp4"
 echo ""
-echo "3. DEBUG MODE:"
-echo "   python realtime_classifier_v3.py --debug"
+echo "3. TODOS LOS VIDEOS:"
+echo "   for f in $VIDEO_DIR/*.mp4; do python realtime_classifier_v4.py \"\$f\"; done"
 echo ""
 echo "=========================================="
 echo ""
