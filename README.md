@@ -1,4 +1,6 @@
 # Human Movement Analysis System - AI
+# DEPLOYED APP -> https://huggingface.co/spaces/RaulQode/human_movement_analysis
+
 This project is developed for the algorithms and programming III (09481) course at Universidad Icesi in Cali, Colombia.
 
 #### -- Project Status: [Active]
